@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
-import Layout from './pages/layout';
+import Layout from './components/layout';
 import Home from './pages/home';
 import FHS from './pages/fhs';
 import OCHS from './pages/ochs';
