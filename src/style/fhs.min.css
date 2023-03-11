@@ -4,19 +4,41 @@
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 300px;
+    justify-content: center;
 }
-/* 
+
 #section-2 {
     padding: 20px;
-    margin-left: -10px;
+    /* margin-left: 2px; */
     display: grid;
     grid-auto-flow: column;
-    grid-column-gap: 10px;
+    grid-auto-columns: 300px;
+    justify-content: center;
 }
 
 #section-3 {
-    padding: 10px;
+    padding: 20px;
+    /* margin-left: 2px; */
     display: grid;
     grid-auto-flow: column;
-    grid-column-gap: 0px;
-} */
+    grid-auto-columns: 300px;
+    justify-content: center;
+}
+
+#section-4 {
+    padding: 20px;
+    /* margin-left: 2px; */
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 300px;
+    justify-content: center;
+}
+
+#section-5 {
+    padding: 20px;
+    /* margin-left: 2px; */
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 300px;
+    justify-content: center;
+}
