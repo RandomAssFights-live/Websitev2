@@ -12,7 +12,7 @@ function Home() {
                     </p>
                     <p className="subtitle">
                         <img
-                        className='hero-img'
+                        id='hero-img'
                         src='https://cdn.randomassfights.live/Static/IMG/4nWnO7.png'
                         width='500'
                         height='480'
