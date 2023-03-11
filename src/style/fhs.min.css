@@ -1,6 +1,5 @@
 #section-1 {
     padding: 20px;
-    /* margin-left: 2px; */
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 300px;
@@ -9,7 +8,6 @@
 
 #section-2 {
     padding: 20px;
-    /* margin-left: 2px; */
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 300px;
@@ -18,7 +16,6 @@
 
 #section-3 {
     padding: 20px;
-    /* margin-left: 2px; */
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 300px;
@@ -27,7 +24,6 @@
 
 #section-4 {
     padding: 20px;
-    /* margin-left: 2px; */
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 300px;
@@ -36,7 +32,6 @@
 
 #section-5 {
     padding: 20px;
-    /* margin-left: 2px; */
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 300px;
