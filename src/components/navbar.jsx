@@ -6,8 +6,8 @@ function Navbar() {
     return (
         <nav>
             <Link id='Home' to='/'>Home</Link>
-            <Link id='FHS' to='/school/district/fhs'>Franklin HS</Link>
-            <Link id='OCHS' to='/school/district/ochs'>Oil City HS</Link>
+            <Link id='FHS' to='/Schools/Districts/FHS'>Franklin HS</Link>
+            <Link id='OCHS' to='/Schools/Districts/OCHS'>Oil City HS</Link>
         </nav>
     );
 }

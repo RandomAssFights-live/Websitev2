@@ -11,8 +11,8 @@ export default function App() {
         <Routes>
             <Route path='/' element={<Layout />}>
                 <Route index element={<Home />} />
-                <Route path='/school/district/fhs' element={<FHS />} />
-                <Route path='/school/district/ochs' element={<OCHS />} />
+                <Route path='/Schools/Districts/FHS' element={<FHS />} />
+                <Route path='/Schools/Districts/OCHS' element={<OCHS />} />
             </Route>
         </Routes>
         </BrowserRouter>
