@@ -1,5 +1,5 @@
 import React from 'react';
-import '../style/fhs.min.css';
+import '../Assets/CSS/FHS.min.css';
 
 function FHS() {
     return (

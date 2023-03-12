@@ -1,7 +1,0 @@
-#section-1 {
-    padding: 20px;
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 300px;
-    justify-content: center;
-}

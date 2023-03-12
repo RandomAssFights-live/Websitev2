@@ -1,0 +1,39 @@
+#section-1 {
+    padding: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 300px;
+    justify-content: center;
+}
+
+#section-2 {
+    padding: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 300px;
+    justify-content: center;
+}
+
+#section-3 {
+    padding: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 300px;
+    justify-content: center;
+}
+
+#section-4 {
+    padding: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 300px;
+    justify-content: center;
+}
+
+#section-5 {
+    padding: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 300px;
+    justify-content: center;
+}

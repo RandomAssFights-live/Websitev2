@@ -1,5 +1,5 @@
 import React from 'react';
-import '../style/ochs.min.css'
+import '../Assets/CSS/OCHS.min.css'
 
 function OCHS() {
     return (
