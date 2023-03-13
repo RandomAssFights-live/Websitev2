@@ -1,34 +1,32 @@
 import React from 'react';
-import '../Assets/CSS/Home.min.css'
 
 function Home() {
     return (
-        
-        <section className="Home">
-            <div className="hero-body">
-                <div className="hero-container">
-                    <p className="title">
-                        Random Ass Fights
-                    </p>
-                    <p className="subtitle">
+
+        <div>
+            <div>
+                <div className="pt-4 min-h-screen flex flex-col justify-center items-center">
+                    <h1 className="text-4xl font-bold font-abril-ratface font-rubik mb-8 text-center text-white">Random Ass Fights</h1>
+                    <div className="flex flex-col items-center">
                         <img
-                        id='hero-img'
-                        src='https://cdn.randomassfights.live/Static/IMG/4nWnO7.png'
-                        width='500'
-                        height='480'
+                            src='https://cdn.randomassfights.live/Static/IMG/4nWnO7.png'
+                            alt='RandomAssFights'
+                            className='rounded-lg overflow-hidden'
                         />
-                    </p>
+                    </div>
+                    <div>
+                        <h1 className="pt-4 text-4xl font-bold font-abril-ratface font-rubik mb-8 text-center text-white">
+                            Want to add a video?
+                        </h1>
+                    </div>
+                    <div className=''>
+                        <p className="font-semi-bold font-abril-ratface font-rubik mb-8 text-center text-white">
+                            Email us at <a href="mailto:requests@randomassfights.live">requests@randomassfights.live</a>
+                        </p>
+                    </div>
                 </div>
             </div>
-            <article className="message">
-                <div className="message-header">
-                    <h3>Want to add a video?</h3>
-                </div>
-                <div className="message-body">
-                    Shoot us an email: <a href='mailto:requests@randomassfights.live'>requests@randomassfights.live</a>
-                </div>
-            </article>
-        </section>
+        </div>
     );
 }
 
