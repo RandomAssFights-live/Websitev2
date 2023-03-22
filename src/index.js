@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import Layout from './Components/Layout';
 import Home from './Pages/Home';
 import FHS from './Pages/FHS';
-import OCHS from './Pages/OCHS';
+import DaytonHS from './Pages/DaytonHS';
 
 export default function App() {
     return (
@@ -12,7 +12,7 @@ export default function App() {
             <Route path='/' element={<Layout />}>
                 <Route index element={<Home />} />
                 <Route path='/Schools/Districts/FHS' element={<FHS />} />
-                <Route path='/Schools/Districts/OCHS' element={<OCHS />} />
+                <Route path='/Schools/Districts/DaytonHS' element={<DaytonHS />} />
             </Route>
         </Routes>
         </BrowserRouter>
