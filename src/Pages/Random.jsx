@@ -10,6 +10,7 @@ function Random() {
                         <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/Random/VxALlH.mp4" controls='controls' width='250' height='400'></video>
                         <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/Random/XOfKzH.mp4" controls='controls' width='250' height='400'></video>
                         <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/Random/DjfgTz.mp4" controls='controls' width='250' height='400'></video>
+                        <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/Random/GJh5DX.mp4" controls='controls' width='250' height='400'></video>
                     </div>
                 </div>
             </div>
