@@ -26,6 +26,14 @@ function Random() {
                         <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/Random/bVh71w.mp4" controls='controls' width='250' height='400'></video>
                         <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/Random/aYq5Ta.mp4" controls='controls' width='250' height='400'></video>
                         <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/Random/5FD4Q8.mp4" controls='controls' width='250' height='400'></video>
+                        <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/Random/UJ9aZS.mp4" controls='controls' width='250' height='400'></video>
+                    </div>
+                </div>
+                <div className='border border-transparent rounded-lg p-4'>
+                    <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
+                        <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/Random/LKOAs5.mp4" controls='controls' width='250' height='400'></video>
+                        <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/Random/Gf4HaZ.mp4" controls='controls' width='250' height='400'></video>
+                        <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/Random/VGf23Z.mp4" controls='controls' width='250' height='400'></video>
                     </div>
                 </div>
             </div>
