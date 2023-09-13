@@ -34,6 +34,7 @@ function Random() {
                         <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/Random/LKOAs5.mp4" controls='controls' width='250' height='400'></video>
                         <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/Random/Gf4HaZ.mp4" controls='controls' width='250' height='400'></video>
                         <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/Random/VGf23Z.mp4" controls='controls' width='250' height='400'></video>
+                        <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/North%20America/New%20Mexico/LK5AZ.mp4" controls='controls' width='250' height='400'></video>
                     </div>
                 </div>
             </div>
