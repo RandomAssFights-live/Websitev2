@@ -37,6 +37,12 @@ function Random() {
                         <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/North%20America/New%20Mexico/LK5AZ.mp4" controls='controls' width='250' height='400'></video>
                     </div>
                 </div>
+                <div className='border border-transparent rounded-lg p-4'>
+                    <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
+                        <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/Random/HyF4Rz.mp4" controls='controls' width='250' height='400'></video>
+                        <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/Random/LkO6Hz.mp4" controls='controls' width='250' height='400'></video>
+                    </div>
+                </div>
             </div>
         </div>
     );
