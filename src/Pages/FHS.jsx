@@ -42,6 +42,7 @@ function FHS() {
                         <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Franklin%20High%20School/Jh92Lp.mp4" controls='controls' width='250' height='400'></video>
                         <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Franklin%20High%20School/GH8SZ.mp4" controls='controls' width='250' height='400'></video>
                         <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Franklin%20High%20School/PlO54z.mp4" controls='controls' width='250' height='400'></video>
+                        <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Franklin%20High%20School/5xHj5k.mp4" controls='controls' width='250' height='400'></video>
                     </div>
                 </div>
             </div>
