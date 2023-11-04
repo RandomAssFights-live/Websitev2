@@ -49,6 +49,8 @@ function FHS() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Franklin%20High%20School/Gh532S.mp4" controls='controls' width='250' height='400'></video>
                         <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Franklin%20High%20School/H53AS1.mp4" controls='controls' width='250' height='400'></video>
+                        <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Franklin%20High%20School/AfE3Q1.mp4" controls='controls' width='250' height='400'></video>
+                        <video className='h-[23rem]' src="https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Franklin%20High%20School/lOj92E.mp4" controls='controls' width='250' height='400'></video>
                     </div>
                 </div>
             </div>
