@@ -44,7 +44,7 @@ function Navbar() {
         {isDropdownOpen && (
           <div
             ref={dropdownRef}
-            className="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md"
+            className="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md z-10"
           >
             <Link
               to="/Schools/Districts/FHS"
