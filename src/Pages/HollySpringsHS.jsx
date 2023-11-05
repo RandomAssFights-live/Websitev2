@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Preloader from "../Components/Preloader";
+import CountdownTimer from "../Components/Timer";
 import "../Assets/CSS/input.css";
 
 function HollySpringsHS() {
+  const targetDate = new Date("03/31/2023");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -22,6 +24,7 @@ function HollySpringsHS() {
         <Preloader />
       ) : (
         <div>
+          <CountdownTimer targetDate={targetDate} />
           <div className="border border-transparent rounded-lg p-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-center">
               {videoSources.map((source, index) => (
