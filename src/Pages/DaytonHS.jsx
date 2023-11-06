@@ -4,7 +4,7 @@ import CountdownTimer from "../Components/Timer";
 import "../Assets/CSS/input.css";
 
 function DaytonHS() {
-  const targetDate = new Date("09/04/2023");
+  const targetDate = new Date("2023-04-09 17:04:35");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

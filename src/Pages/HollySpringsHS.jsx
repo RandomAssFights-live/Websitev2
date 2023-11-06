@@ -4,7 +4,7 @@ import CountdownTimer from "../Components/Timer";
 import "../Assets/CSS/input.css";
 
 function HollySpringsHS() {
-  const targetDate = new Date("03/31/2023");
+  const targetDate = new Date("2023-03-31 12:34:37");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

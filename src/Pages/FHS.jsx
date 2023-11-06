@@ -4,7 +4,7 @@ import CountdownTimer from "../Components/Timer";
 import "../Assets/CSS/input.css";
 
 function FHS() {
-  const targetDate = new Date("11/04/2023");
+  const targetDate = new Date("2023-11-04 16:55:16");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
