@@ -55,16 +55,14 @@ function FHS() {
                 <div
                   key={index}
                   className="relative overflow-hidden bg-black"
-                  style={{ width: "200px", height: "400px" }}
+                  style={{ width: "200px", height: "400px", margin: "auto" }}
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <video
-                      className="w-full h-full"
-                      src={source}
-                      controls
-                      style={{ objectFit: "contain" }}
-                    ></video>
-                  </div>
+                  <video
+                    className="w-full h-full"
+                    src={source}
+                    controls
+                    style={{ objectFit: "contain" }}
+                  ></video>
                 </div>
               ))}
             </div>
