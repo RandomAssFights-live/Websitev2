@@ -4,7 +4,7 @@ import CountdownTimer from "../Components/Timer";
 import "../Assets/CSS/input.css";
 
 function Random() {
-  const targetDate = new Date("2023-11-11 04:13:57");
+  const targetDate = new Date("2023-11-11 04:14:00");
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
 
