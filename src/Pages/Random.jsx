@@ -4,7 +4,7 @@ import CountdownTimer from "../Components/Timer";
 import "../Assets/CSS/input.css";
 
 function Random() {
-  const targetDate = new Date("2023-09-23 22:25:30");
+  const targetDate = new Date("2023-11-11 04:13:57");
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -31,6 +31,7 @@ function Random() {
     "https://cdn.randomassfights.live/Videos/North%20America/New%20Mexico/LK5AZ.mp4",
     "https://cdn.randomassfights.live/Videos/Random/HyF4Rz.mp4",
     "https://cdn.randomassfights.live/Videos/Random/LkO6Hz.mp4",
+    "https://cdn.randomassfights.live/Videos/Random/SBX3A15.mp4",
   ];
 
   // Calculate the start and end indices for the videos on the current page
