@@ -32,6 +32,11 @@ function Random() {
     "https://cdn.randomassfights.live/Videos/Random/HyF4Rz.mp4",
     "https://cdn.randomassfights.live/Videos/Random/LkO6Hz.mp4",
     "https://cdn.randomassfights.live/Videos/Random/SBX3A15.mp4",
+
+"https://cdn.randomassfights.live/Videos/Random/F9ex00.mp4",
+
+"https://cdn.randomassfights.live/Videos/Random/Vyva9B.mp4"
+
   ];
 
   // Calculate the start and end indices for the videos on the current page
