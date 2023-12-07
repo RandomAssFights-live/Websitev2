@@ -33,7 +33,7 @@ function Random() {
     "https://cdn.randomassfights.live/Videos/Random/LkO6Hz.mp4",
     "https://cdn.randomassfights.live/Videos/Random/SBX3A15.mp4",
     "https://cdn.randomassfights.live/Videos/Random/F9ex00.mp4",
-    "https://cdn.randomassfights.live/Videos/Random/Vyva9B.mp4"
+    "https://cdn.randomassfights.live/Videos/Random/Vyva9B.mp4",
     "https://cdn.randomassfights.live/Videos/Random/46kmDx.mp4",
     "https://cdn.randomassfights.live/Videos/Random/ga3Qhq.mp4",
     "https://cdn.randomassfights.live/Videos/Random/ZAGx1h.mp4"
