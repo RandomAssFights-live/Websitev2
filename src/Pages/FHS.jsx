@@ -41,6 +41,9 @@ function FHS() {
     "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Franklin%20High%20School/lOj92E.mp4",
 
 "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Franklin%20High%20School/0hCePT.mp4",
+
+"https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Franklin%20High%20School/sFYa0x.mp4",
+
     // Add more video URLs as needed
   ];
 
