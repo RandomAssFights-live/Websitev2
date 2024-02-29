@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Preloader from "../Components/Preloader";
 import CountdownTimer from "../Components/Timer";
+// import NewContentAlert from "../Components/NewContentAlert";
 import "../Assets/CSS/input.css";
 
 function FHS() {
@@ -62,6 +63,7 @@ function FHS() {
 
   return (
     <div>
+      {/* <NewContentAlert /> */}
       {loading ? (
         <Preloader />
       ) : (
