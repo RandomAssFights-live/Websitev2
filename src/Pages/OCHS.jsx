@@ -15,18 +15,22 @@ function OCHS() {
   }, []);
 
   const videoSources = [
-    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/4XCzTc.mp4",
-    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/5tw7S8.mp4",
-    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/AmMR2b.mp4",
-    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/BCQ4cv.mp4",
-    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/bCwVT4.mp4",
-    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/GxTa7R.mp4",
-    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/Jmgb6X.mp4",
-    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/K17Ff3.mp4",
-    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/kDQqx7.mp4",
-    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/S9dhYH.mp4",
-    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/u5dA9T.mp4",
-    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/w7GTuJ.mp4",
+    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/2f6ECU.mp4",
+    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/3DNayt.mp4",
+    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/3EQgc2.mp4",
+    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/5Cmedn.mp4",
+    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/68zUat.mp4",
+    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/C1vNad.mp4",
+    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/dTnqx6.mp4",
+    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/FUV2gD.mp4",
+    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/k0BkwK.mp4",
+    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/M0qBmC.mp4",
+    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/mtrQK8.mp4",
+    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/Nxm0H4.mp4",
+    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/rv8TPe.mp4",
+    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/RyqzX6.mp4",
+    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/w1hXBX.mp4",
+    "https://cdn.randomassfights.live/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/ZqxV93.mp4",
     // Add more video URLs as needed
   ];
 
