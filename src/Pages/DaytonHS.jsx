@@ -15,11 +15,11 @@ function DaytonHS() {
   }, []);
 
   const videoSources = [
-    "https://cdn.randomassfights.live/Videos/North%20America/Ohio/Dayton%20HS/HKVRN.mp4",
-    "https://cdn.randomassfights.live/Videos/North%20America/Ohio/Dayton%20HS/RYALrB.mp4",
-    "https://cdn.randomassfights.live/Videos/North%20America/Ohio/Dayton%20HS/XSZSik.mp4",
-    "https://cdn.randomassfights.live/Videos/North%20America/Ohio/Dayton%20HS/gBWNCC.mp4",
-    "https://cdn.randomassfights.live/Videos/North%20America/Ohio/Dayton%20HS/JZFCtr.mp4",
+    "https://cdn.randomassfights.live/Static/Videos/North%20America/Ohio/Dayton%20HS/HKVRN.mp4",
+    "https://cdn.randomassfights.live/Static/Videos/North%20America/Ohio/Dayton%20HS/RYALrB.mp4",
+    "https://cdn.randomassfights.live/Static/Videos/North%20America/Ohio/Dayton%20HS/XSZSik.mp4",
+    "https://cdn.randomassfights.live/Static/Videos/North%20America/Ohio/Dayton%20HS/gBWNCC.mp4",
+    "https://cdn.randomassfights.live/Static/Videos/North%20America/Ohio/Dayton%20HS/JZFCtr.mp4",
     // Add more video URLs as needed
   ];
 

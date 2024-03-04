@@ -15,7 +15,7 @@ function HollySpringsHS() {
   }, []);
 
   const videoSources = [
-    "https://cdn.randomassfights.live/Videos/North%20America/North%20Carolina/Holly%20Springs%20High%20School/XxfZzH.mp4",
+    "https://cdn.randomassfights.live/Static/Videos/North%20America/North%20Carolina/Holly%20Springs%20High%20School/XxfZzH.mp4",
     // Add more video URLs as needed
   ];
 
