@@ -31,7 +31,6 @@ function OCHS() {
     "https://cdn.randomassfights.live/Static/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/RyqzX6.mp4",
     "https://cdn.randomassfights.live/Static/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/w1hXBX.mp4",
     "https://cdn.randomassfights.live/Static/Videos/North%20America/Pennsylvania/Oil%20City%20High%20School/ZqxV93.mp4",
-    // Add more video URLs as needed
   ];
 
   // Calculate the start and end indices for the videos on the current page

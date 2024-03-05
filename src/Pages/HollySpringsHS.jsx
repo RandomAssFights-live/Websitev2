@@ -16,7 +16,6 @@ function HollySpringsHS() {
 
   const videoSources = [
     "https://cdn.randomassfights.live/Static/Videos/North%20America/North%20Carolina/Holly%20Springs%20High%20School/XxfZzH.mp4",
-    // Add more video URLs as needed
   ];
 
   // Calculate the start and end indices for the videos on the current page

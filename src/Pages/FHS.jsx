@@ -42,7 +42,6 @@ function FHS() {
     "https://cdn.randomassfights.live/Static/Videos/North%20America/Pennsylvania/Franklin%20High%20School/lOj92E.mp4",
     "https://cdn.randomassfights.live/Static/Videos/North%20America/Pennsylvania/Franklin%20High%20School/0hCePT.mp4",
     "https://cdn.randomassfights.live/Static/Videos/North%20America/Pennsylvania/Franklin%20High%20School/sFYa0x.mp4",
-    // Add more video URLs as needed
   ];
 
   // Calculate the start and end indices for the videos on the current page

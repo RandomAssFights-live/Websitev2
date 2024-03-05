@@ -20,7 +20,6 @@ function DaytonHS() {
     "https://cdn.randomassfights.live/Static/Videos/North%20America/Ohio/Dayton%20HS/XSZSik.mp4",
     "https://cdn.randomassfights.live/Static/Videos/North%20America/Ohio/Dayton%20HS/gBWNCC.mp4",
     "https://cdn.randomassfights.live/Static/Videos/North%20America/Ohio/Dayton%20HS/JZFCtr.mp4",
-    // Add more video URLs as needed
   ];
 
   // Calculate the start and end indices for the videos on the current page
