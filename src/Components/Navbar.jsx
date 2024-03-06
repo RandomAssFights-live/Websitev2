@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import '../Assets/CSS/Navbar.min.css';
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import "../Assets/CSS/Navbar.min.css";
 
 function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -22,10 +22,10 @@ function Navbar() {
   };
 
   useEffect(() => {
-    window.addEventListener('click', handleClickOutsideDropdown);
+    window.addEventListener("click", handleClickOutsideDropdown);
 
     return () => {
-      window.removeEventListener('click', handleClickOutsideDropdown);
+      window.removeEventListener("click", handleClickOutsideDropdown);
     };
   }, []);
 

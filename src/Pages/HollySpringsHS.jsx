@@ -1,18 +1,25 @@
 import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Preloader from "../Components/Preloader";
 import CountdownTimer from "../Components/Timer";
 import "../Assets/CSS/input.css";
 
 function HollySpringsHS() {
-  const targetDate = new Date("2023-03-31 12:34:37");
+  const targetDate = new Date("2024-02-29 03:44:20");
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
+  const location = useLocation();
 
   useEffect(() => {
+    // Parse the page parameter from the URL
+    const searchParams = new URLSearchParams(location.search);
+    const page = parseInt(searchParams.get("page")) || 1;
+    setCurrentPage(page);
+
     setTimeout(() => {
       setLoading(false);
     }, 2000);
-  }, []);
+  }, [location.search]);
 
   const videoSources = [
     "https://cdn.randomassfights.live/Static/Videos/North%20America/North%20Carolina/Holly%20Springs%20High%20School/XxfZzH.mp4",
@@ -27,11 +34,16 @@ function HollySpringsHS() {
 
   // Handle pagination button clicks
   const handlePrevPage = () => {
-    setCurrentPage(currentPage - 1);
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
   };
 
   const handleNextPage = () => {
-    setCurrentPage(currentPage + 1);
+    const totalPages = Math.ceil(videoSources.length / videosPerPage);
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
   };
 
   return (
@@ -69,9 +81,9 @@ function HollySpringsHS() {
               {[
                 ...Array(Math.ceil(videoSources.length / videosPerPage)).keys(),
               ].map((pageNumber) => (
-                <button
+                <Link
                   key={pageNumber}
-                  onClick={() => setCurrentPage(pageNumber + 1)}
+                  to={`${location.pathname}?page=${pageNumber + 1}`}
                   className={
                     currentPage === pageNumber + 1
                       ? "mx-2 font-bold bg-blue-500 text-white px-4 py-2 rounded"
@@ -79,7 +91,7 @@ function HollySpringsHS() {
                   }
                 >
                   {pageNumber + 1}
-                </button>
+                </Link>
               ))}
               <button
                 className="bg-nav-black text-white px-4 py-2 rounded ml-2"
