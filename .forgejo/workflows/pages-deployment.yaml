@@ -10,6 +10,9 @@ jobs:
     runs-on: docker
 
     steps:
+      - name: Clone Cloudflare Pages Action
+        run: git clone https://github.com/cloudflare/pages-action.git .github/actions/pages-action
+
       - name: Checkout repository
         uses: actions/checkout@v2
 
@@ -25,10 +28,9 @@ jobs:
         run: npm run build
 
       - name: Deploy to Cloudflare Pages
-        uses: https://github.com/cloudflare/pages-action@3
+        uses: .github/actions/pages-action
         with:
           directory: build # Adjust if your build output directory is different
         env:
           CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CF_PAGES_ZONE_ID: ${{ secrets.CLOUDFLARE_PAGES_ZONE_ID }}
