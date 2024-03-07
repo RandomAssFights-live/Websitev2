@@ -1,3 +1,5 @@
+name: Deploy to Cloudflare Pages
+
 on:
   push:
     branches:
@@ -5,22 +7,78 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
-    name: Deploy to Cloudflare Pages
+    runs-on: self-hosted
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       # Run your project's build step
       # - name: Build
       #   run: npm install && npm run build
-      - name: Publish
-        uses: cloudflare/pages-action@1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: WebsiteV2 # e.g. 'my-project'
-          directory: /build # e.g. 'dist'
-          gitHubToken: ${{ secrets.TOKEN }}
+
+      - name: Deploy to Cloudflare Pages
+        run: |
+          #!/bin/bash
+
+          # Cloudflare Pages API Token
+          CF_API_TOKEN="${{ secrets.CLOUDFLARE_API_TOKEN }}"
+
+          # Cloudflare Account ID
+          CF_ACCOUNT_ID="${{ secrets.CLOUDFLARE_ACCOUNT_ID }}"
+
+          # Project Name
+          PROJECT_NAME="WebsiteV2"
+
+          # Directory where your built files are located
+          BUILD_DIRECTORY="build"
+
+          # Cloudflare Pages URL
+          CF_PAGES_URL="https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT_ID/pages/projects"
+
+          # Authenticate with Cloudflare API
+          auth_header="Authorization: Bearer $CF_API_TOKEN"
+
+          # Build the project
+          echo "Building the project..."
+          npm install && npm run build
+
+          # Check if the build directory exists
+          if [ ! -d "$BUILD_DIRECTORY" ]; then
+            echo "Error: Build directory '$BUILD_DIRECTORY' not found"
+            exit 1
+          fi
+
+          # Deploy to Cloudflare Pages
+          echo "Deploying to Cloudflare Pages..."
+
+          # Create a temporary JSON file for the request body
+          temp_file=$(mktemp)
+          cat <<EOF > "$temp_file"
+          {
+            "name": "$PROJECT_NAME",
+            "source": {
+              "type": "directory",
+              "dir": "$BUILD_DIRECTORY"
+            }
+          }
+          EOF
+
+          # Send the request to Cloudflare Pages API
+          response=$(curl -s -X POST "$CF_PAGES_URL" \
+            -H "$auth_header" \
+            -H "Content-Type: application/json" \
+            --data @"$temp_file"
+          )
+
+          # Check the response
+          if [ "$(echo "$response" | jq -r '.success')" = "true" ]; then
+            echo "Deployment successful!"
+          else
+            echo "Error: Deployment failed"
+            echo "$response"
+            exit 1
+          fi
+
+          # Clean up
+          rm "$temp_file"
