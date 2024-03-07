@@ -16,22 +16,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install Node.js and NPM
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14' # Change this to the appropriate Node.js version for your project
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build
+      # Run your project's build step
+      # - name: Build
+      #   run: npm install && npm run build
 
       - name: Publish
         uses: cloudflare/pages-action@1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: WebsiteV2 # Change this to your project name
-          directory: build # Assuming your build output directory is 'build'
-          gitHubToken: ${{ secrets.GITEA_TOKEN }}
+          projectName: WebsiteV2 # e.g. 'my-project'
+          directory: /build # e.g. 'dist'
+          gitHubToken: ${{ secrets.TOKEN }}
