@@ -6,6 +6,7 @@ import FHS from "./Pages/FHS";
 import DaytonHS from "./Pages/DaytonHS";
 import HollySpringsHS from "./Pages/HollySpringsHS";
 import OCHS from "./Pages/OCHS";
+import CorryHS from "./Pages/CorryHS";
 import Random from "./Pages/Random";
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
             element={<HollySpringsHS />}
           />
           <Route path="/Schools/Districts/OCHS" element={<OCHS />} />
+          <Route path="/Schools/Districts/CorryHS" element={<CorryHS />} />
           <Route path="/Other/Random" element={<Random />} />
         </Route>
       </Routes>
