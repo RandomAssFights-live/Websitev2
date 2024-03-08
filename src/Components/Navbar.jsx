@@ -61,13 +61,6 @@ function Navbar() {
               Dayton
             </Link>
             <Link
-              to="/Schools/Districts/HollySpringsHS"
-              className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
-              onClick={handleOptionClick}
-            >
-              Holly Springs
-            </Link>
-            <Link
               to="/Schools/Districts/OCHS"
               className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
               onClick={handleOptionClick}

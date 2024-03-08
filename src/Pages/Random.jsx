@@ -47,6 +47,7 @@ function Random() {
     "https://cdn.randomassfights.live/Static/Videos/Random/ZAGx1h.mp4",
     "https://cdn.randomassfights.live/Static/Videos/Random/s8zCVA.mp4",
     "https://cdn.randomassfights.live/Static/Videos/Random/Y1x6bv.mp4",
+    "https://cdn.randomassfights.live/Static/Videos/North%20America/North%20Carolina/Holly%20Springs%20High%20School/XxfZzH.mp4",
   ];
 
   // Function to copy link to clipboard and display message

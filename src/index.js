@@ -4,7 +4,6 @@ import Layout from "./Components/Layout";
 import Home from "./Pages/Home";
 import FHS from "./Pages/FHS";
 import DaytonHS from "./Pages/DaytonHS";
-import HollySpringsHS from "./Pages/HollySpringsHS";
 import OCHS from "./Pages/OCHS";
 import CorryHS from "./Pages/CorryHS";
 import Random from "./Pages/Random";
@@ -17,10 +16,6 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="/Schools/Districts/FHS" element={<FHS />} />
           <Route path="/Schools/Districts/DaytonHS" element={<DaytonHS />} />
-          <Route
-            path="/Schools/Districts/HollySpringsHS"
-            element={<HollySpringsHS />}
-          />
           <Route path="/Schools/Districts/OCHS" element={<OCHS />} />
           <Route path="/Schools/Districts/CorryHS" element={<CorryHS />} />
           <Route path="/Other/Random" element={<Random />} />
