@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Preloader from "../Components/Preloader";
 import CountdownTimer from "../Components/Timer";
+import copy from "clipboard-copy"; // Import clipboard-copy package
 import "../Assets/CSS/input.css";
 
 function Random() {
@@ -48,6 +49,12 @@ function Random() {
     "https://cdn.randomassfights.live/Static/Videos/Random/Y1x6bv.mp4",
   ];
 
+  // Function to copy link to clipboard and display message
+  const copyToClipboard = (link) => {
+    copy(link);
+    alert("Copied to clipboard!");
+  };
+
   // Calculate the start and end indices for the videos on the current page
   const videosPerPage = 8; // Adjust this value based on your requirement
   const startIndex = (currentPage - 1) * videosPerPage;
@@ -79,17 +86,24 @@ function Random() {
           <div className="border border-transparent rounded-lg p-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-center">
               {paginatedVideos.map((source, index) => (
-                <div
-                  key={index}
-                  className="relative overflow-hidden bg-black"
-                  style={{ width: "200px", height: "400px", margin: "auto" }}
-                >
-                  <video
-                    className="w-full h-full"
-                    src={source}
-                    controls
-                    style={{ objectFit: "contain" }}
-                  ></video>
+                <div key={index} className="text-center">
+                  <div
+                    className="relative overflow-hidden bg-black"
+                    style={{ width: "200px", height: "400px", margin: "auto" }}
+                  >
+                    <video
+                      className="w-full h-full"
+                      src={source}
+                      controls
+                      style={{ objectFit: "contain" }}
+                    ></video>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard(source)}
+                    className="bg-nav-black text-white px-4 py-2 rounded mt-2"
+                  >
+                    Share Video
+                  </button>
                 </div>
               ))}
             </div>
