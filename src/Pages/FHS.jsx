@@ -49,6 +49,7 @@ function FHS() {
     "https://cdn.randomassfights.live/Static/Videos/North%20America/Pennsylvania/Franklin%20High%20School/lOj92E.mp4",
     "https://cdn.randomassfights.live/Static/Videos/North%20America/Pennsylvania/Franklin%20High%20School/0hCePT.mp4",
     "https://cdn.randomassfights.live/Static/Videos/North%20America/Pennsylvania/Franklin%20High%20School/sFYa0x.mp4",
+    "https://cdn.randomassfights.live/Static/Videos/North%20America/Pennsylvania/Franklin%20High%20School/3V2r2b.mp4",
   ];
 
   // Function to copy link to clipboard and display message
