@@ -1,4 +1,5 @@
 import React from "react";
+import Upload from "../Components/Upload";
 
 function Home() {
   return (
@@ -22,11 +23,7 @@ function Home() {
           </div>
           <div className="">
             <p className="font-semi-bold font-abril-ratface font-rubik mb-8 text-center text-white">
-              {/* Email us at{" "}
-              <a href="mailto:requests@randomassfights.live">
-                requests@randomassfights.live
-              </a> */}
-              Sorry! You cannot submit videos via email currently as we are working on a better solution.
+              <Upload />
             </p>
           </div>
         </div>

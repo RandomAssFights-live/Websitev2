@@ -1,0 +1,82 @@
+<?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    exit(0); // Respond to preflight requests
+}
+
+// Discord webhook URL
+$webhook_url = 'https://discord.com/api/webhooks/';
+
+// Directory to store uploaded files
+$uploadFileDir = './uploaded_files/';
+
+// Check if a file is uploaded
+if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
+    // Get file details
+    $fileTmpPath = $_FILES['file']['tmp_name'];
+    $fileName = $_FILES['file']['name'];
+
+    // Create a unique filename
+    $uniqueFileName = uniqid() . '-' . $fileName;
+
+    // Create the directory if it doesn't exist
+    if (!is_dir($uploadFileDir)) {
+        mkdir($uploadFileDir, 0777, true);
+    }
+    $dest_path = $uploadFileDir . $uniqueFileName;
+
+    // Move the uploaded file to the specified directory
+    if (move_uploaded_file($fileTmpPath, $dest_path)) {
+        // Prepare the file URL (ensure it matches your server's setup)
+        $fileUrl = 'http://' . $_SERVER['HTTP_HOST'] . '/upload/' . $uploadFileDir . $uniqueFileName;
+
+        // Log the file URL for debugging
+        error_log('File URL: ' . $fileUrl);
+
+        // Prepare the payload for Discord webhook
+        $data = array(
+            'content' => 'New file uploaded: [' . htmlspecialchars($fileName) . '](' . htmlspecialchars($fileUrl) . ')',
+            'username' => 'Upload Bot'
+        );
+
+        // Convert data to JSON
+        $json_data = json_encode($data);
+
+        // Log the JSON payload for debugging
+        error_log('Payload: ' . $json_data);
+
+        // Send the payload to Discord webhook
+        $ch = curl_init($webhook_url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $response = curl_exec($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        // Log response and HTTP code for debugging
+        error_log('Discord Response: ' . $response);
+        error_log('HTTP Code: ' . $http_code);
+
+        if ($http_code === 204) {
+            http_response_code(200);
+            echo 'File uploaded successfully and a link was sent to Discord!';
+        } else {
+            http_response_code(500);
+            echo 'Failed to send file link to Discord! HTTP Code: ' . $http_code;
+        }
+    } else {
+        http_response_code(500);
+        echo 'There was an error moving the file to the upload directory.';
+    }
+} else {
+    http_response_code(400);
+    echo 'No file uploaded or there was an upload error.';
+}
+?>
