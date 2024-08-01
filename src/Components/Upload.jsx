@@ -5,20 +5,22 @@ const Upload = () => {
     const [progress, setProgress] = useState({});
     const [uploading, setUploading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
-    const [successMessages, setSuccessMessages] = useState([]);
+    const [successMessage, setSuccessMessage] = useState('');
     const [uploadRates, setUploadRates] = useState({});
     const [uploadedCount, setUploadedCount] = useState(0);
+    const [canceledCount, setCanceledCount] = useState(0);
+    const [uploadStarted, setUploadStarted] = useState(false);
     const xhrRefs = useRef({});
 
     useEffect(() => {
-        if (uploading && files.length > 0) {
-            const allFilesUploaded = files.every(file => progress[file.name] === 100);
-            if (allFilesUploaded) {
-                setUploading(false);
-                setSuccessMessages(['All videos uploaded successfully!']);
+        if (!uploading && uploadedCount + canceledCount === files.length && uploadStarted) {
+            if (uploadedCount === files.length) {
+                setSuccessMessage('All videos uploaded successfully!');
+            } else if (uploadedCount + canceledCount === files.length) {
+                setSuccessMessage('Some videos were successfully uploaded.');
             }
         }
-    }, [progress, uploading, files]);
+    }, [uploading, uploadedCount, canceledCount, files.length, uploadStarted]);
 
     const handleFileChange = (e) => {
         const selectedFiles = Array.from(e.target.files);
@@ -80,24 +82,20 @@ const Upload = () => {
         xhr.onload = () => {
             if (xhr.status === 200) {
                 setUploadedCount(prevCount => prevCount + 1);
-                removeFile(file);
-                clearMessages();
-                setSuccessMessages(['File uploaded successfully!']);
+                removeFile(file.name);
             } else {
-                const errorText = xhr.responseText;
-                clearMessages();
-                setErrorMessage(`File upload failed: ${errorText}`);
+                setErrorMessage(`File upload failed: ${xhr.responseText}`);
             }
             setUploading(false);
         };
 
         xhr.onerror = () => {
-            clearMessages();
             setErrorMessage('Error uploading file. Please check the server URL and CORS settings.');
             setUploading(false);
         };
 
         setUploading(true);
+        setUploadStarted(true);
         xhr.send(formData);
     };
 
@@ -108,37 +106,34 @@ const Upload = () => {
         files.forEach(file => uploadFile(file));
     };
 
-    const cancelUpload = (file) => {
-        const xhr = xhrRefs.current[file.name];
+    const cancelUpload = (fileName) => {
+        const xhr = xhrRefs.current[fileName];
         if (xhr) {
             xhr.abort();
-            setUploading(false);
-            setProgress(prevProgress => ({ ...prevProgress, [file.name]: 0 }));
-            setUploadRates(prevRates => ({ ...prevRates, [file.name]: null }));
-            clearMessages();
+            setProgress(prevProgress => ({ ...prevProgress, [fileName]: 0 }));
+            setUploadRates(prevRates => ({ ...prevRates, [fileName]: null }));
             setErrorMessage('Upload canceled.');
-            delete xhrRefs.current[file.name];
+            delete xhrRefs.current[fileName];
         }
+        removeFile(fileName);
+        setCanceledCount(prevCount => prevCount + 1);
     };
 
-    const removeFile = (file) => {
-        if (progress[file.name] < 100) {
-            cancelUpload(file);
-        }
-        setFiles(prevFiles => prevFiles.filter(f => f.name !== file.name));
+    const removeFile = (fileName) => {
+        setFiles(prevFiles => prevFiles.filter(file => file.name !== fileName));
         setProgress(prevProgress => {
-            const { [file.name]: removed, ...rest } = prevProgress;
+            const { [fileName]: removed, ...rest } = prevProgress;
             return rest;
         });
         setUploadRates(prevRates => {
-            const { [file.name]: removed, ...rest } = prevRates;
+            const { [fileName]: removed, ...rest } = prevRates;
             return rest;
         });
     };
 
     const clearMessages = () => {
         setErrorMessage('');
-        setSuccessMessages([]);
+        setSuccessMessage('');
     };
 
     return (
@@ -174,7 +169,7 @@ const Upload = () => {
                                         )}
                                         {progress[file.name] < 100 && (
                                             <button
-                                                onClick={() => cancelUpload(file)}
+                                                onClick={() => cancelUpload(file.name)}
                                                 className="bg-red-600 text-white py-1 px-2 rounded hover:bg-red-700 ml-2"
                                             >
                                                 Cancel
@@ -192,7 +187,7 @@ const Upload = () => {
                                         </div>
                                     )}
                                     <button
-                                        onClick={() => removeFile(file)}
+                                        onClick={() => removeFile(file.name)}
                                         className="bg-gray-600 text-white py-1 px-2 rounded hover:bg-gray-700 mt-2"
                                     >
                                         Remove
@@ -217,11 +212,9 @@ const Upload = () => {
                     Uploaded: {uploadedCount}/{files.length}
                 </div>
             )}
-            {successMessages.length > 0 && (
+            {successMessage && (
                 <div className="text-green-500 mt-2">
-                    {successMessages.map((msg, index) => (
-                        <div key={index}>{msg}</div>
-                    ))}
+                    {successMessage}
                 </div>
             )}
             {errorMessage && <div className="text-red-500 mt-2">{errorMessage}</div>}
