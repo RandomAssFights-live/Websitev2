@@ -10,7 +10,7 @@ function Home() {
           </h1>
           <div className="flex flex-col items-center">
             <img
-              src="https://cdn.randomassfights.live/Static/IMG/4nWnO7.png"
+              src="https://cdn.randomassfights.live/Static/Assets/Logo/IMG/G2Q8BaZcFz.png"
               alt="RandomAssFights"
               className="rounded-lg overflow-hidden"
             />
@@ -22,10 +22,11 @@ function Home() {
           </div>
           <div className="">
             <p className="font-semi-bold font-abril-ratface font-rubik mb-8 text-center text-white">
-              Email us at{" "}
+              {/* Email us at{" "}
               <a href="mailto:requests@randomassfights.live">
                 requests@randomassfights.live
-              </a>
+              </a> */}
+              Sorry! You cannot submit videos via email currently as we are working on a better solution.
             </p>
           </div>
         </div>
