@@ -7,20 +7,20 @@ const Upload = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
     const [uploadRates, setUploadRates] = useState({});
-    const [uploadedCount, setUploadedCount] = useState(0);
+    const [uploadedFiles, setUploadedFiles] = useState([]);
     const [canceledCount, setCanceledCount] = useState(0);
     const [uploadStarted, setUploadStarted] = useState(false);
     const xhrRefs = useRef({});
 
     useEffect(() => {
-        if (!uploading && uploadedCount + canceledCount === files.length && uploadStarted) {
-            if (uploadedCount === files.length) {
+        if (!uploading && uploadedFiles.length + canceledCount === files.length && uploadStarted) {
+            if (uploadedFiles.length === files.length) {
                 setSuccessMessage('All videos uploaded successfully!');
-            } else if (uploadedCount + canceledCount === files.length) {
-                setSuccessMessage('Some videos were successfully uploaded.');
+            } else if (uploadedFiles.length > 0) {
+                setSuccessMessage(`Uploaded ${uploadedFiles.length} video(s) successfully.`);
             }
         }
-    }, [uploading, uploadedCount, canceledCount, files.length, uploadStarted]);
+    }, [uploading, uploadedFiles.length, canceledCount, files.length, uploadStarted]);
 
     const handleFileChange = (e) => {
         const selectedFiles = Array.from(e.target.files);
@@ -81,7 +81,10 @@ const Upload = () => {
 
         xhr.onload = () => {
             if (xhr.status === 200) {
-                setUploadedCount(prevCount => prevCount + 1);
+                const uploadTime = new Date().toLocaleString();
+                setUploadedFiles(prevFiles => [...prevFiles, { name: file.name, time: uploadTime }]);
+                clearMessages();
+                setSuccessMessage(`All files were uploaded successfully!`);
                 removeFile(file.name);
             } else {
                 setErrorMessage(`File upload failed: ${xhr.responseText}`);
@@ -209,7 +212,19 @@ const Upload = () => {
             {uploading && (
                 <div className="mt-2 text-center text-sm text-white">
                     Uploading {files.length} videos<br />
-                    Uploaded: {uploadedCount}/{files.length}
+                    Uploaded: {uploadedFiles.length}/{files.length}
+                </div>
+            )}
+            {uploadedFiles.length > 0 && (
+                <div className="mt-4">
+                    <h3 className="text-white mb-2">Uploaded Videos</h3>
+                    <ul className="text-white">
+                        {uploadedFiles.map(file => (
+                            <li key={file.name}>
+                                {file.name} - Uploaded at: {file.time}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             )}
             {successMessage && (
