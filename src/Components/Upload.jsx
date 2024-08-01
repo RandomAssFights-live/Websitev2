@@ -1,57 +1,3 @@
-// import React, { useState } from 'react';
-
-// const Upload = () => {
-//     const [file, setFile] = useState(null);
-
-//     const handleFileChange = (e) => {
-//         setFile(e.target.files[0]);
-//     };
-
-//     const uploadFile = async () => {
-//         if (!file) {
-//             alert('Please select a file first');
-//             return;
-//         }
-
-//         const formData = new FormData();
-//         formData.append('file', file);
-
-//         try {
-//             // const response = await fetch('https://api.randomassfights.live/upload.php', {
-//             const response = await fetch('http://172.16.0.186/upload/upload.php', {
-//                 method: 'POST',
-//                 body: formData,
-//             });
-
-//             if (response.ok) {
-//                 alert('File uploaded successfully!');
-//             } else {
-//                 const errorText = await response.text();
-//                 alert(`File upload failed: ${errorText}`);
-//             }
-//         } catch (error) {
-//             console.error('Error uploading file:', error);
-//             alert(`Error uploading file: ${error.message}`);
-//         }
-//     };
-
-//     return (
-//         <div className="flex flex-col items-center mt-4">
-//             <input
-//                 type="file"
-//                 onChange={handleFileChange}
-//                 className="mb-2 p-2 border border-gray-300 rounded"
-//             />
-//             <button
-//                 onClick={uploadFile}
-//                 className="bg-nav-black text-white py-2 px-4 rounded hover:bg-blue-600"
-//             >
-//                 Upload
-//             </button>
-//         </div>
-//     );
-// };
-
 import React, { useState } from 'react';
 
 const Upload = () => {
@@ -72,14 +18,12 @@ const Upload = () => {
             return;
         }
 
-        // Define FormData here
         const formData = new FormData();
         formData.append('file', file);
 
         const xhr = new XMLHttpRequest();
         xhr.open('POST', 'https://api-cdn.randomassfights.live/upload/upload.php', true);
 
-        // Progress tracking
         xhr.upload.onprogress = (event) => {
             if (event.lengthComputable) {
                 const percentComplete = Math.round((event.loaded / event.total) * 100);
@@ -89,7 +33,7 @@ const Upload = () => {
 
         xhr.onload = () => {
             setUploading(false);
-            setProgress(0); // Reset progress after upload
+            setProgress(0);
             if (xhr.status === 200) {
                 alert('File uploaded successfully!');
             } else {
@@ -109,28 +53,43 @@ const Upload = () => {
     };
 
     return (
-        <div className="flex flex-col items-center mt-4">
+        <div className="flex flex-col items-center mt-4 p-4 border border-gray-700 rounded-lg bg-gray-800">
             <input
                 type="file"
                 onChange={handleFileChange}
-                className="mb-2 p-2 border border-gray-300 rounded"
+                className="hidden"
+                id="fileInput"
             />
-            <button
-                onClick={uploadFile}
-                className="bg-nav-black text-white py-2 px-4 rounded hover:bg-blue-600"
-                disabled={uploading}
-            >
-                Upload
-            </button>
+            {!file ? (
+                <label
+                    htmlFor="fileInput"
+                    className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 cursor-pointer"
+                >
+                    Select Media
+                </label>
+            ) : (
+                <>
+                    <div className="text-white mb-2">
+                        Filename: {file.name}
+                    </div>
+                    <button
+                        onClick={uploadFile}
+                        className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 disabled:bg-gray-500"
+                        disabled={uploading}
+                    >
+                        Upload
+                    </button>
+                </>
+            )}
             {uploading && (
                 <div className="mt-2 w-full">
-                    <div className="bg-gray-200 rounded-full h-2">
+                    <div className="bg-gray-300 rounded-full h-2">
                         <div
                             className="bg-blue-600 h-2 rounded-full"
                             style={{ width: `${progress}%` }}
                         />
                     </div>
-                    <div className="text-center text-sm mt-1">{progress}%</div>
+                    <div className="text-center text-sm mt-1 text-white">Progress: {progress}%</div>
                 </div>
             )}
             {errorMessage && <div className="text-red-500 mt-2">{errorMessage}</div>}

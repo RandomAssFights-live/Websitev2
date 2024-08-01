@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Preloader from "../Components/Preloader";
 import CountdownTimer from "../Components/Timer";
-import copy from "clipboard-copy"; // Import clipboard-copy package
+import copy from "clipboard-copy";
 import "../Assets/CSS/input.css";
 
 function Random() {
@@ -12,7 +12,6 @@ function Random() {
   const location = useLocation();
 
   useEffect(() => {
-    // Parse the page parameter from the URL
     const searchParams = new URLSearchParams(location.search);
     const page = parseInt(searchParams.get("page")) || 1;
     setCurrentPage(page);
@@ -51,20 +50,17 @@ function Random() {
     "https://cdn.randomassfights.live/Static/Videos/Random/1MqnAe.mp4",
   ];
 
-  // Function to copy link to clipboard and display message
   const copyToClipboard = (link) => {
     copy(link);
     alert("Copied to clipboard!");
   };
 
-  // Calculate the start and end indices for the videos on the current page
-  const videosPerPage = 8; // Adjust this value based on your requirement
+  const videosPerPage = 8; 
   const startIndex = (currentPage - 1) * videosPerPage;
   const endIndex = startIndex + videosPerPage;
 
   const paginatedVideos = videoSources.slice(startIndex, endIndex);
 
-  // Handle pagination button clicks
   const handlePrevPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
