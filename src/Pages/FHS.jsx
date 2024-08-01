@@ -6,7 +6,7 @@ import copy from "clipboard-copy";
 import "../Assets/CSS/input.css";
 
 function FHS() {
-  const targetDate = new Date("2024-05-24 07:05:20");
+  const targetDate = new Date("2024-07-31 03:05:20");
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const location = useLocation();
@@ -50,6 +50,7 @@ function FHS() {
     "https://cdn.randomassfights.live/Static/Videos/North%20America/Pennsylvania/Franklin%20High%20School/0hCePT.mp4",
     "https://cdn.randomassfights.live/Static/Videos/North%20America/Pennsylvania/Franklin%20High%20School/sFYa0x.mp4",
     "https://cdn.randomassfights.live/Static/Videos/North%20America/Pennsylvania/Franklin%20High%20School/vyWQ0p.mp4",
+    "https://cdn.randomassfights.live/Static/Videos/North%20America/Pennsylvania/Franklin%20High%20School/CYYci2e0Wu.mp4",
   ];
 
   // Function to copy link to clipboard and display message
