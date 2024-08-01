@@ -31,7 +31,7 @@ if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
     // Move the uploaded file to the specified directory
     if (move_uploaded_file($fileTmpPath, $dest_path)) {
         // Prepare the file URL (ensure it matches your server's setup)
-        $fileUrl = 'http://' . $_SERVER['HTTP_HOST'] . '/upload/' . $uploadFileDir . $uniqueFileName;
+        $fileUrl = 'https://' . 'api-cdn.randomassfights.live' . '/upload/' . $uploadFileDir . $uniqueFileName;
 
         // Log the file URL for debugging
         error_log('File URL: ' . $fileUrl);
