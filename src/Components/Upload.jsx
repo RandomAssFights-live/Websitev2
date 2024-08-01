@@ -77,7 +77,7 @@ const Upload = () => {
         formData.append('file', file);
 
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'http://172.16.0.186/upload/upload.php', true);
+        xhr.open('POST', 'https://api-cdn.randomassfights.live/upload/upload.php', true);
 
         // Progress tracking
         xhr.upload.onprogress = (event) => {
