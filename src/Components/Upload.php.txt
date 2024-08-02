@@ -7,39 +7,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit(0); // Respond to preflight requests
 }
 
-// Discord webhook URL
-$webhook_url = 'https://discord.com/api/webhooks/';
+$webhook_url = 'https://discord.com/api/webhooks/1268533287056310272/PMh7rLuKHKYYbGcWsE75RgRMyDXChgrPshS-TfxrW0nivb9LwXEugGOLyyk-PRKg4MJJ';
 
-// Directory to store uploaded files
-$uploadFileDir = './uploaded_files/';
+$uploadFileDir = './videos/';
 
-// Check if a file is uploaded
 if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
     // Get file details
     $fileTmpPath = $_FILES['file']['tmp_name'];
     $fileName = $_FILES['file']['name'];
+    $fileExtension = pathinfo($fileName, PATHINFO_EXTENSION);
 
-    // Create a unique filename
-    $uniqueFileName = uniqid() . '-' . $fileName;
+    $uniqueFileName = uniqid() . '.' . $fileExtension;
 
-    // Create the directory if it doesn't exist
     if (!is_dir($uploadFileDir)) {
         mkdir($uploadFileDir, 0777, true);
     }
     $dest_path = $uploadFileDir . $uniqueFileName;
 
-    // Move the uploaded file to the specified directory
     if (move_uploaded_file($fileTmpPath, $dest_path)) {
-        // Prepare the file URL (ensure it matches your server's setup)
         $fileUrl = 'https://' . 'api-cdn.randomassfights.live' . '/upload/' . $uploadFileDir . $uniqueFileName;
 
-        // Log the file URL for debugging
         error_log('File URL: ' . $fileUrl);
 
-        // Prepare the payload for Discord webhook
         $data = array(
-            'content' => 'New file uploaded: [' . htmlspecialchars($fileName) . '](' . htmlspecialchars($fileUrl) . ')',
-            'username' => 'Upload Bot'
+            'embeds' => array(
+                array(
+                    'title' => 'New file uploaded',
+                    'description' => '[' . htmlspecialchars($fileName) . '](' . htmlspecialchars($fileUrl) . ')',
+                    'color' => 16711680, // Red color
+                    'footer' => array(
+                        'text' => 'Upload Bot'
+                    )
+                )
+            )
         );
 
         // Convert data to JSON
@@ -60,7 +60,6 @@ if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
         $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
 
-        // Log response and HTTP code for debugging
         error_log('Discord Response: ' . $response);
         error_log('HTTP Code: ' . $http_code);
 

@@ -7,6 +7,7 @@ import DaytonHS from "./Pages/DaytonHS";
 import OCHS from "./Pages/OCHS";
 import CorryHS from "./Pages/CorryHS";
 import Random from "./Pages/Random";
+import Upload from "./Pages/Upload";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/Schools/Districts/OCHS" element={<OCHS />} />
           <Route path="/Schools/Districts/CorryHS" element={<CorryHS />} />
           <Route path="/Other/Random" element={<Random />} />
+          <Route path="/Other/Upload" element={<Upload />} />
         </Route>
       </Routes>
     </BrowserRouter>

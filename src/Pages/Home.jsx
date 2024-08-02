@@ -1,5 +1,5 @@
 import React from "react";
-import Upload from "../Components/Upload";
+// import Upload from "../Components/Upload";
 
 function Home() {
   return (
@@ -21,9 +21,14 @@ function Home() {
               Want to add a video?
             </h1>
           </div>
-          <div className="">
-            <p className="font-semi-bold font-abril-ratface font-rubik mb-8 text-center text-white">
-              <Upload />
+          <div className="text-center">
+            <p className="font-semibold mb-8">
+              <a
+                href="/Other/Upload"
+                className="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                Upload
+              </a>
             </p>
           </div>
         </div>

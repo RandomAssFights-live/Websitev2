@@ -140,7 +140,7 @@ const Upload = () => {
     };
 
     return (
-        <div className="flex flex-col items-center mt-4 p-4 border border-gray-700 rounded-lg bg-gray-800">
+        <div className="flex flex-col items-center mt-4 p-6 border border-gray-700 rounded-lg bg-gray-800 shadow-lg max-w-lg mx-auto">
             <input
                 type="file"
                 accept="video/*"
@@ -152,57 +152,52 @@ const Upload = () => {
             {files.length === 0 ? (
                 <label
                     htmlFor="fileInput"
-                    className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 cursor-pointer"
+                    className="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700 cursor-pointer transition duration-200"
                 >
                     Select Videos
                 </label>
             ) : (
                 <>
-                    <div className="text-white mb-2">
+                    <div className="text-white w-full mb-4">
                         {files.map(file => (
-                            <div key={file.name} className="mb-2">
-                                <div className="flex flex-col items-start">
-                                    <div className="flex items-center">
-                                        <div className="mr-2">Filename: {file.name}</div>
-                                        {progress[file.name] !== undefined && (
-                                            <div className="text-sm text-white">
-                                                Progress: {progress[file.name]}%<br />
-                                                Upload Rate: {uploadRates[file.name] ? `${uploadRates[file.name]} Mbps` : 'Calculating...'}
-                                            </div>
-                                        )}
-                                        {progress[file.name] < 100 && (
-                                            <button
-                                                onClick={() => cancelUpload(file.name)}
-                                                className="bg-red-600 text-white py-1 px-2 rounded hover:bg-red-700 ml-2"
-                                            >
-                                                Cancel
-                                            </button>
-                                        )}
-                                    </div>
-                                    {progress[file.name] < 100 && (
-                                        <div className="mt-2 w-full">
-                                            <div className="bg-gray-300 rounded-full h-2">
-                                                <div
-                                                    className="bg-blue-600 h-2 rounded-full"
-                                                    style={{ width: `${progress[file.name]}%` }}
-                                                />
-                                            </div>
+                            <div key={file.name} className="mb-4">
+                                <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                                    <div className="mr-2 font-semibold truncate">{file.name}</div>
+                                    {progress[file.name] !== undefined && (
+                                        <div className="text-sm mt-1 md:mt-0">
+                                            {progress[file.name]}% | {uploadRates[file.name] ? `${uploadRates[file.name]} Mbps` : 'Calculating...'}
                                         </div>
                                     )}
-                                    <button
-                                        onClick={() => removeFile(file.name)}
-                                        className="bg-gray-600 text-white py-1 px-2 rounded hover:bg-gray-700 mt-2"
-                                    >
-                                        Remove
-                                    </button>
+                                    {progress[file.name] < 100 && (
+                                        <button
+                                            onClick={() => cancelUpload(file.name)}
+                                            className="bg-red-600 text-white py-1 px-3 rounded hover:bg-red-700 ml-2 transition duration-200 mt-1 md:mt-0"
+                                        >
+                                            Cancel
+                                        </button>
+                                    )}
                                 </div>
+                                {progress[file.name] < 100 && (
+                                    <div className="w-full bg-gray-300 rounded-full h-2 overflow-hidden mb-2">
+                                        <div
+                                            className="bg-blue-600 h-full"
+                                            style={{ width: `${progress[file.name]}%` }}
+                                        />
+                                    </div>
+                                )}
+                                <button
+                                    onClick={() => removeFile(file.name)}
+                                    className="bg-gray-600 text-white py-1 px-3 rounded hover:bg-gray-700 transition duration-200"
+                                >
+                                    Remove
+                                </button>
                             </div>
                         ))}
                     </div>
                     {!uploading && files.length > 0 && (
                         <button
                             onClick={startUploads}
-                            className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
+                            className="bg-green-600 text-white py-2 px-6 rounded hover:bg-green-700 transition duration-200"
                         >
                             Start Uploads
                         </button>
@@ -216,11 +211,11 @@ const Upload = () => {
                 </div>
             )}
             {uploadedFiles.length > 0 && (
-                <div className="mt-4">
-                    <h3 className="text-white mb-2">Uploaded Videos</h3>
+                <div className="mt-6 w-full">
+                    <h3 className="text-white text-lg font-semibold mb-2">Uploaded Videos</h3>
                     <ul className="text-white">
                         {uploadedFiles.map(file => (
-                            <li key={file.name}>
+                            <li key={file.name} className="mb-1">
                                 {file.name} - Uploaded at: {file.time}
                             </li>
                         ))}
@@ -228,11 +223,11 @@ const Upload = () => {
                 </div>
             )}
             {successMessage && (
-                <div className="text-green-500 mt-2">
+                <div className="text-green-500 mt-4 font-semibold">
                     {successMessage}
                 </div>
             )}
-            {errorMessage && <div className="text-red-500 mt-2">{errorMessage}</div>}
+            {errorMessage && <div className="text-red-500 mt-4 font-semibold">{errorMessage}</div>}
         </div>
     );
 };
