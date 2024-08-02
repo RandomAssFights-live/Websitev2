@@ -58,7 +58,7 @@ const Upload = () => {
 
         const xhr = new XMLHttpRequest();
         xhrRefs.current[file.name] = xhr;
-        xhr.open('POST', 'https://api-cdn.randomassfights.live/upload/upload.php', true);
+        xhr.open('POST', 'https://api-cdn.randomassfights.live/upload', true);
 
         const startTime = new Date().getTime();
         let lastUploadedBytes = 0;
