@@ -50,6 +50,7 @@ function FHS() {
     "https://cdn.randomassfights.live/Static/Videos/North%20America/Pennsylvania/Franklin%20High%20School/sFYa0x.mp4",
     "https://cdn.randomassfights.live/Static/Videos/North%20America/Pennsylvania/Franklin%20High%20School/vyWQ0p.mp4",
     "https://cdn.randomassfights.live/Static/Videos/North%20America/Pennsylvania/Franklin%20High%20School/CYYci2e0Wu.mp4",
+    "https://cdn.randomassfights.live/Static/Videos/North%20America/Pennsylvania/Franklin%20High%20School/an4p0P.mp4",
   ];
 
   const copyToClipboard = (link) => {

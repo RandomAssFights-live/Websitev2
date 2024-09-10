@@ -53,27 +53,6 @@ function Navbar() {
             >
               Franklin
             </Link>
-            <Link
-              to="/Schools/Districts/DaytonHS"
-              className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
-              onClick={handleOptionClick}
-            >
-              Dayton
-            </Link>
-            <Link
-              to="/Schools/Districts/OCHS"
-              className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
-              onClick={handleOptionClick}
-            >
-              Oil City
-            </Link>
-            <Link
-              to="/Schools/Districts/CorryHS"
-              className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
-              onClick={handleOptionClick}
-            >
-              Corry HS
-            </Link>
           </div>
         )}
       </div>
